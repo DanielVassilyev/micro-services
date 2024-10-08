@@ -1,0 +1,3 @@
+CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                    NAMES
+af8f94f462d5   containerdatacollector-service1   "python3 /app/servic…"   10 minutes ago   Up 10 minutes   0.0.0.0:8199->8199/tcp   service1
+0316f3ed47a4   containerdatacollector-service2   "/app/service2"          14 minutes ago   Up 10 minutes   8500/tcp                 service2

@@ -1,0 +1,22 @@
+services:
+  service2:
+    build:
+      dockerfile: service2/Dockerfile
+    container_name: service2
+    networks:
+      - internal
+
+  service1:
+    build:
+      dockerfile: service1/Dockerfile
+    container_name: service1
+    ports:
+      - "8199:8199"
+    depends_on:
+      - service2
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
