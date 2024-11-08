@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        async function sendRequest()
+         {
+                const response = await fetch('/api');
+                const data = await response.text();
+                document.getElementById('responseArea').value = data;
+         }
+        function stopSystem()
+         {
+            fetch('/stop', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => {console.log(data); window.close();})
+        }
+    </script>
+</head>
+<body>
+<button onclick="sendRequest()">Reqeust</button>
+    <button onclick="stopSystem()">Stop</button>
+    <br><br>
+    <textarea id="responseArea" rows="50" cols="70"></textarea>
+</body>
+</html>

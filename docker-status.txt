@@ -1,3 +1,12 @@
-CONTAINER ID   IMAGE                             COMMAND                  CREATED          STATUS          PORTS                    NAMES
-af8f94f462d5   containerdatacollector-service1   "python3 /app/servic…"   10 minutes ago   Up 10 minutes   0.0.0.0:8199->8199/tcp   service1
-0316f3ed47a4   containerdatacollector-service2   "/app/service2"          14 minutes ago   Up 10 minutes   8500/tcp                 service2
+CONTAINER ID   IMAGE                         COMMAND                  CREATED          STATUS          PORTS                                               NAMES
+35fa26bc90c2   micro-services-loadbalancer   "/docker-entrypoint.…"   20 seconds ago   Up 19 seconds   80/tcp, 0.0.0.0:8198->8198/tcp, :::8198->8198/tcp   micro-services-loadbalancer-1
+96b85bc93190   micro-services-service1       "python3 /app/servic…"   34 minutes ago   Up 19 seconds   8199/tcp                                            micro-services-service1-3
+b9b02f9cbe06   micro-services-service1       "python3 /app/servic…"   34 minutes ago   Up 19 seconds   8199/tcp                                            micro-services-service1-2
+eba34559c001   micro-services-service1       "python3 /app/servic…"   34 minutes ago   Up 18 seconds   8199/tcp                                            micro-services-service1-1
+a59cb874a889   micro-services-service2       "/app/service2"          17 hours ago     Up 19 seconds   8500/tcp                                            service2
+
+NETWORK ID     NAME                      DRIVER    SCOPE
+705713cfd6bb   bridge                    bridge    local
+1802986a4a07   host                      host      local
+217948df11b5   micro-services_internal   bridge    local
+966232d87e24   none                      null      local

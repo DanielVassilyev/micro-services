@@ -1,3 +1,0 @@
-The only thing that is noticable is that containers share the disk space with the host. IP addresses are assigned by docker in its interal network,
-file system is presumably runs on the host but is isolated. The processes that are running in the containers are independent from
-the processes that are running within the host. Container's uptime is different, and I could not find a viable answer why it is happening.
